@@ -46,10 +46,10 @@ Exemple :
 ```js
 import { english2pinyin, english2ipa, ipa2pinyin } from 'english2pinyin';
 
-console.log(await english2ipa('application'));
+console.log(english2ipa('application'));
 // AE2 P L AH0 K EY1 SH AH0 N
 
-console.log(await english2pinyin('application'));
+console.log(english2pinyin('application'));
 // ai4 po5 la5 kui1 sha5 en5
 
 console.log(ipa2pinyin('S IH0 K Y UH1 R IH0 NG'));
@@ -71,9 +71,7 @@ Chargez le script :
 </head>
 <body>
   <script>
-    english2pinyin('english').then((result) => {
-      console.log(result);
-    });
+    console.log(english2pinyin('english'));
 
     console.log(ipa2pinyin('AE2 P L AH0 K EY1 SH AH0 N'));
   </script>
@@ -95,7 +93,7 @@ npm install
 
 ## API
 
-### `await english2pinyin(word, options?)`
+### `english2pinyin(word, options?)`
 
 Cherchez un mot dans `dict/cmudict.dict`, puis convertissez son IPA en pinyin numéroté.
 
@@ -105,15 +103,15 @@ Options :
 
 Retour :
 
-- `Promise<string>`
+- `string`
 
-### `await english2ipa(word)`
+### `english2ipa(word)`
 
 Cherchez un mot dans `dict/cmudict.dict`.
 
 Retour :
 
-- `Promise<string | null>`
+- `string | null`
 
 ### `ipa2pinyin(ipa)`
 

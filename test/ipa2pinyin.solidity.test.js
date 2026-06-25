@@ -5,7 +5,7 @@
  */
 
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
+import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import test from 'node:test';
 import { fileURLToPath } from 'node:url';
@@ -56,11 +56,9 @@ function parseLexicon(content) {
   return validPinyin;
 }
 
-test('ipa2pinyin only emits pinyin listed in lexicon/pinyin-lexicon-r.txt for CMUdict entries', async () => {
-  const [dictContent, lexiconContent] = await Promise.all([
-    readFile(dictPath, 'utf8'),
-    readFile(lexiconPath, 'utf8')
-  ]);
+test('ipa2pinyin only emits pinyin listed in lexicon/pinyin-lexicon-r.txt for CMUdict entries', () => {
+  const dictContent = readFileSync(dictPath, 'utf8');
+  const lexiconContent = readFileSync(lexiconPath, 'utf8');
 
   const validPinyin = parseLexicon(lexiconContent);
   const invalidOutputs = [];

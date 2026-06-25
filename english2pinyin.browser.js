@@ -1,10 +1,10 @@
+(function (global) {
 /**
  * ENGLISH2PINYIN
  * Author: Davy Chen <davy.chen@163.com>
  * Profile: https://www.linkedin.com/in/davychxn/
  */
 
-(function (global) {
 const IPA_MAP_STAND_ALONE = {
   AH: 'a5', EY: 'ei5', Z: 'zi5', F: 'fu5', AO: 'ao5', R: 'r5', T: 'te5', UW: 'wu5',
   W: 'wu5', N: 'en5', IH: 'yi5', P: 'po5', L: 'ao5', AA: 'a5', B: 'bo5', ER: 'r5',
@@ -230,7 +230,7 @@ function normalizeDictWord(word) {
   return String(word).toLowerCase().replace(/\(\d+\)$/, '');
 }
 
-async function english2ipa(word) {
+function english2ipa(word) {
   const key = normalizeDictWord(word).trim();
   if (!key) {
     return null;
@@ -239,8 +239,8 @@ async function english2ipa(word) {
   return CMUDICT_ENTRIES.get(key) ?? null;
 }
 
-async function english2pinyin(word, options = {}) {
-  const ipa = await english2ipa(word);
+function english2pinyin(word, options = {}) {
+  const ipa = english2ipa(word);
   if (ipa == null) {
     if (options.throwIfMissing) {
       throw new Error(`Word not found in CMUdict: ${String(word)}`);

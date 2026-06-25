@@ -61,7 +61,7 @@ function normalizeDictWord(word) {
   return String(word).toLowerCase().replace(/\\(\\d+\\)$/, '');
 }
 
-async function english2ipa(word) {
+function english2ipa(word) {
   const key = normalizeDictWord(word).trim();
   if (!key) {
     return null;
@@ -70,8 +70,8 @@ async function english2ipa(word) {
   return CMUDICT_ENTRIES.get(key) ?? null;
 }
 
-async function english2pinyin(word, options = {}) {
-  const ipa = await english2ipa(word);
+function english2pinyin(word, options = {}) {
+  const ipa = english2ipa(word);
   if (ipa == null) {
     if (options.throwIfMissing) {
       throw new Error(\`Word not found in CMUdict: \${String(word)}\`);
