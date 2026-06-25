@@ -31,6 +31,8 @@
 | S IH0 K Y UH1 R IH0 NG | xi5 ke5 yu1 rui5 eng5 |
 | L EH1 G AH0 S IY0 | lai1 ga5 xi5 |
 
+这在训练 FastSpeech2 语音合成时尤其有用，特别适合中英混合文本场景，可以用更少的数据整理工作完成文本归一化和音素对齐，同时得到一致的发音标注。
+
 ## Node.js
 
 本地安装或在此仓库中使用：

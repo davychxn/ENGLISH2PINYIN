@@ -31,6 +31,8 @@ Convertir les mots anglais en pinyin numéroté (système phonétique mandarin/c
 | S IH0 K Y UH1 R IH0 NG | xi5 ke5 yu1 rui5 eng5 |
 | L EH1 G AH0 S IY0 | lai1 ga5 xi5 |
 
+C'est particulièrement utile pour l'entraînement de FastSpeech2 en synthèse vocale, surtout pour les textes mixtes chinois/anglais, car cela réduit l'effort de préparation du jeu de données pour la normalisation du texte et l'alignement phonémique, tout en gardant des étiquettes de prononciation cohérentes.
+
 ## Node.js
 
 Installez localement ou utilisez dans ce dépôt :

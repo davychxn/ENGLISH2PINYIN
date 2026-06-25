@@ -31,6 +31,8 @@ Convert English words to numbered Pinyin(mandarin/chinese phonetic system) throu
 | S IH0 K Y UH1 R IH0 NG | xi5 ke5 yu1 rui5 eng5 |
 | L EH1 G AH0 S IY0 | lai1 ga5 xi5 |
 
+This is especially helpful when training FastSpeech2 speech synthesis for mixed Chinese and English text, because it reduces dataset preparation effort for text normalization and phoneme alignment while keeping pronunciation labels consistent.
+
 ## Node.js
 
 Install locally or use in this repo:
