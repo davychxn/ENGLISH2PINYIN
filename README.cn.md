@@ -6,30 +6,30 @@
 
 ## 输入和输出示例
 
-英文单词转拼音（12 个已验证的示例）：
+### 英文单词转拼音（12 个已验证的示例）
 
-```text
-record -> ruo5 kao1 r5 de5
-communication -> ka5 mu5 yu4 na5 kui1 sha5 en5
-in -> yi5 en5
-securing -> xi5 ke5 yu1 rui5 eng5
-prime -> po5 ruo1 mu5
-foreign -> fan1 ruo5 en5
-aldinger -> ao1 ao5 di5 eng5 r5
-engleman -> yi1 eng5 a5 ao5 ma5 en5
-legacy -> lai1 ga5 xi5
-blotting -> bo5 la1 ti5 eng5
-english -> yi1 eng5 ge5 li5 shi5
-banana -> ba5 nai1 na5
-```
+| 英文单词 | 拼音输出 |
+|---|---|
+| record | ruo5 kao1 r5 de5 |
+| communication | ka5 mu5 yu4 na5 kui1 sha5 en5 |
+| in | yi5 en5 |
+| securing | xi5 ke5 yu1 rui5 eng5 |
+| prime | po5 ruo1 mu5 |
+| foreign | fan1 ruo5 en5 |
+| aldinger | ao1 ao5 di5 eng5 r5 |
+| engleman | yi1 eng5 a5 ao5 ma5 en5 |
+| legacy | lai1 ga5 xi5 |
+| blotting | bo5 la1 ti5 eng5 |
+| english | yi1 eng5 ge5 li5 shi5 |
+| banana | ba5 nai1 na5 |
 
-IPA 转拼音：
+### IPA 转拼音
 
-```text
-AE2 P L AH0 K EY1 SH AH0 N -> ai4 po5 la5 kui1 sha5 en5
-S IH0 K Y UH1 R IH0 NG -> xi5 ke5 yu1 rui5 eng5
-L EH1 G AH0 S IY0 -> lai1 ga5 xi5
-```
+| IPA 输入 | 拼音输出 |
+|---|---|
+| AE2 P L AH0 K EY1 SH AH0 N | ai4 po5 la5 kui1 sha5 en5 |
+| S IH0 K Y UH1 R IH0 NG | xi5 ke5 yu1 rui5 eng5 |
+| L EH1 G AH0 S IY0 | lai1 ga5 xi5 |
 
 ## Node.js
 
