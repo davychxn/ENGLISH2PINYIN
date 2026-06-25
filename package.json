@@ -1,0 +1,50 @@
+{
+  "name": "english2pinyin",
+  "version": "1.0.1",
+  "description": "Convert English words to Pinyin using IPA as an intermediate representation.",
+  "type": "module",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./browser": "./english2pinyin.browser.js"
+  },
+  "files": [
+    "index.js",
+    "english2pinyin.browser.js",
+    "src",
+    "dict",
+    "README.md",
+    "README.cn.md",
+    "README.fr.md",
+    "LICENSE"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/davychxn/ENGLISH2PINYIN"
+  },
+  "keywords": [
+    "english",
+    "pinyin",
+    "ipa",
+    "pronunciation",
+    "phonetic",
+    "spelling"
+  ],
+  "homepage": "https://coderhome.com/",
+  "license": "MIT",
+  "funding": {
+    "type": "patreon",
+    "url": "https://www.patreon.com/davychxn"
+  },
+  "author": {
+    "name": "Davy Chen",
+    "email": "davy.chen@163.com",
+    "url": "https://www.linkedin.com/in/davychxn/"
+  },
+  "scripts": {
+    "build": "node ./scripts/build-browser.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+  }
+}
