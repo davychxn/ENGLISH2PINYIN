@@ -73,11 +73,50 @@ const VOWEL_STRESS_MAP2 = {
 
 const STRESS_TONE_MAP = { 2: '4', 1: '1', 0: '5' };
 
+const ALPHABET_TO_PINYIN = {
+  a: 'ei1', b: 'bi4', c: 'xi1', d: 'di4', e: 'yi4', f: 'ai5 fu5', g: 'ji4', h: 'ei5 chi5', i: 'ai5', j: 'zhai5',
+  k: 'kai4', l: 'ai5 ao5', m: 'ai5 mu5', n: 'ai5 en5', o: 'ou1', p: 'pi1', q: 'kou4', r: 'er5', s: 'ai5 si5', t: 'ti4',
+  u: 'you1', v: 'wei1', w: 'da1 biao5', x: 'ku1 si5', y: 'wai4', z: 'zei4',
+
+  A: 'ei1', B: 'bi4', C: 'xi1', D: 'di4', E: 'yi4', F: 'ai5  fu5', G: 'ji4', H: 'ei5 chi5', I: 'ai5', J: 'zhai5',
+  K: 'kai4', L: 'ai5 ao5', M: 'ai5 mu5', N: 'ai5 en5', O: 'ou1', P: 'pi1', Q: 'kou4', R: 'er5', S: 'ai5 si5', T: 'ti4',
+  U: 'you1', V: 'wei1', W: 'da1 biao5', X: 'ku1 si5', Y: 'wai4', Z: 'zei4',
+
+  ａ: 'ei1', ｂ: 'bi4', ｃ: 'xi1', ｄ: 'di4', ｅ: 'yi4', ｆ: 'ai5 fu5', ｇ: 'ji4', ｈ: 'ei5 chi5', ｉ: 'ai5', ｊ: 'zhai5',
+  ｋ: 'kai4', ｌ: 'ai5 ao5', ｍ: 'ai5 mu5', ｎ: 'ai5 en5', ｏ: 'ou1', ｐ: 'pi1', ｑ: 'kou4', ｒ: 'er5', ｓ: 'ai5 si5', ｔ: 'ti4',
+  ｕ: 'you1', ｖ: 'wei1', ｗ: 'da1 biao5', ｘ: 'ku1 si5', ｙ: 'wai4', ｚ: 'zei4',
+
+  Ａ: 'ei1', Ｂ: 'bi4', Ｃ: 'xi1', Ｄ: 'di4', Ｅ: 'yi4', Ｆ: 'ai5 fu5', Ｇ: 'ji4', Ｈ: 'ei5 chi5', Ｉ: 'ai5', Ｊ: 'zhai5',
+  Ｋ: 'kai4', Ｌ: 'ai5 ao5', Ｍ: 'ai5 mu5', Ｎ: 'ai5 en5', Ｏ: 'ou1', Ｐ: 'pi1', Ｑ: 'kou4', Ｒ: 'er5', Ｓ: 'ai5 si5', Ｔ: 'ti4',
+  Ｕ: 'you1', Ｖ: 'wei1', Ｗ: 'da1 biao5', Ｘ: 'ku1 si5', Ｙ: 'wai4', Ｚ: 'zei4'
+};
+
 const VOWELS = new Set(['AH', 'EY', 'AO', 'UW', 'IH', 'AA', 'IY', 'EH', 'AE', 'OW', 'AW', 'AY', 'UH', 'OY']);
 const CONSONANTS = new Set(['Z', 'F', 'T', 'P', 'L', 'B', 'G', 'K', 'S', 'TH', 'D', 'V', 'SH', 'ZH', 'HH', 'JH', 'CH', 'DH']);
 const SEMI_VOWELS = new Set(['W', 'Y']);
 const NASAL_STOPS = new Set(['M', 'N', 'NG']);
 const R_COLORED = new Set(['R', 'ER']);
+
+function normalizePinyinSyllables(value) {
+  return String(value ?? '').trim().split(/\s+/).filter(Boolean).join(' ');
+}
+
+export function alphabetToPinyinLetters(text) {
+  const input = String(text ?? '');
+  if (input === '') {
+    return '';
+  }
+
+  const mapped = [];
+  for (const ch of input) {
+    const pinyin = ALPHABET_TO_PINYIN[ch];
+    if (pinyin != null) {
+      mapped.push(normalizePinyinSyllables(pinyin));
+    }
+  }
+
+  return mapped.join(' ');
+}
 
 function stripStress(phone) {
   return phone.replace(/[0-2]$/, '');

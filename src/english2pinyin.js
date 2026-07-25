@@ -8,7 +8,7 @@ import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
-import ipa2pinyin from './ipa2pinyin.js';
+import ipa2pinyin, { alphabetToPinyinLetters } from './ipa2pinyin.js';
 
 const moduleDir = path.dirname(fileURLToPath(import.meta.url));
 const DEFAULT_DICT_PATH = path.resolve(moduleDir, '../dict/cmudict.dict');
@@ -69,7 +69,7 @@ export function english2pinyin(word, options = {}) {
     if (options.throwIfMissing) {
       throw new Error(`Word not found in CMUdict: ${String(word)}`);
     }
-    return '';
+    return alphabetToPinyinLetters(word);
   }
 
   return ipa2pinyin(ipa);

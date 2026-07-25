@@ -43,7 +43,7 @@ function parseDict(content) {
 
 function inlineIpaSource(source) {
   return source
-    .replace(/export\s+function\s+ipa2pinyin\s*\(/, 'function ipa2pinyin(')
+    .replace(/export\s+function\s+([A-Za-z_$][\w$]*)\s*\(/g, 'function $1(')
     .replace(/export\s+default\s+ipa2pinyin\s*;?\s*$/, '')
     .trim();
 }
@@ -76,7 +76,7 @@ function english2pinyin(word, options = {}) {
     if (options.throwIfMissing) {
       throw new Error(\`Word not found in CMUdict: \${String(word)}\`);
     }
-    return '';
+    return alphabetToPinyinLetters(word);
   }
 
   return ipa2pinyin(ipa);

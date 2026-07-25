@@ -1,6 +1,6 @@
 {
   "name": "english2pinyin",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Convert English words to Pinyin using IPA as an intermediate representation.",
   "type": "module",
   "main": "./index.js",
